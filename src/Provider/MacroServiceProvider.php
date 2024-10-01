@@ -1,6 +1,6 @@
 <?php
 
-namespace YukataRm\Laravel\Mail\Provider;
+namespace YukataRm\Laravel\Database\Provider;
 
 use YukataRm\Laravel\Provider\MacroServiceProvider as BaseServiceProvider;
 
@@ -11,7 +11,7 @@ use Illuminate\Support\Fluent;
 /**
  * Macro Service Provider
  * 
- * @package YukataRm\Laravel\Mail\Provider
+ * @package YukataRm\Laravel\Database\Provider
  * 
  * @method \Illuminate\Database\Schema\ColumnDefinition tinyInteger(string $column, bool $autoIncrement = false, bool $unsigned = false)
  * 
