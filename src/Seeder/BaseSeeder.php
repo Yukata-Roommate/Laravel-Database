@@ -83,10 +83,10 @@ abstract class BaseSeeder extends Seeder
     /**
      * get parameter
      * 
-     * @param int|string|null $key
+     * @param int|null $key
      * @return mixed
      */
-    protected function parameters(int|string|null $index = null): mixed
+    protected function parameters(int|null $index = null): mixed
     {
         if (is_null($index)) return $this->parameters;
 
@@ -96,13 +96,81 @@ abstract class BaseSeeder extends Seeder
     }
 
     /**
-     * get parameter
+     * get string parameter
      * 
-     * @param string $name 
+     * @param int $index
+     * @return string|null
      */
-    public function __get(string $name): mixed
+    protected function string(int $index): string|null
     {
-        return $this->parameters($name);
+        $value = $this->parameters($index);
+
+        return is_null($value) ? null : (string) $value;
+    }
+
+    /**
+     * get integer parameter
+     * 
+     * @param int $index
+     * @return int|null
+     */
+    protected function integer(int $index): int|null
+    {
+        $value = $this->parameters($index);
+
+        return is_null($value) ? null : (int) $value;
+    }
+
+    /**
+     * get boolean parameter
+     * 
+     * @param int $index
+     * @return bool|null
+     */
+    protected function boolean(int $index): bool|null
+    {
+        $value = $this->parameters($index);
+
+        return is_null($value) ? null : (bool) $value;
+    }
+
+    /**
+     * get array parameter
+     * 
+     * @param int $index
+     * @return array<mixed>|null
+     */
+    protected function array(int $index): array|null
+    {
+        $value = $this->parameters($index);
+
+        return is_null($value) ? null : (array) $value;
+    }
+
+    /**
+     * get object parameter
+     * 
+     * @param int $index
+     * @return object|null
+     */
+    protected function object(int $index): object|null
+    {
+        $value = $this->parameters($index);
+
+        return is_null($value) ? null : (object) $value;
+    }
+
+    /**
+     * get float parameter
+     * 
+     * @param int $index
+     * @return float|null
+     */
+    protected function float(int $index): float|null
+    {
+        $value = $this->parameters($index);
+
+        return is_null($value) ? null : (float) $value;
     }
 
     /*----------------------------------------*
